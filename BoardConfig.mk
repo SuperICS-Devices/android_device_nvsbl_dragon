@@ -33,30 +33,29 @@ TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/softwinner/907/vibrator.c
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 268435456
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 360710144
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 #EGL stuff
-BOARD_EGL_CFG := device/softwinner/907/egl.cfg
+BOARD_EGL_CFG := device/nvsbl/dragon/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_USE_SKIA_LCDTEXT := true
 
 #Recovery Stuff
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/softwinner/907/recovery_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvsbl/dragon/recovery_keys.c
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 BOARD_UMS_2ND_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun1/file"
-TARGET_RECOVERY_INITRC := device/softwinner/907/recovery_init.rc
+TARGET_RECOVERY_INITRC := device/nvsbl/dragon/recovery_init.rc
 
 #Misc stuff
 TARGET_RECOVERY_PRE_COMMAND := "echo -n boot-recovery | busybox dd of=/dev/block/nandf count=1 conv=sync; sync"
 BOARD_USE_LEGACY_TOUCHSCREEN := true
-TARGET_HARDWARE_INCLUDE := $(TOP)/device/softwinner/907/libraries/include
+TARGET_HARDWARE_INCLUDE := $(TOP)/device/nvsbl/dragon/libraries/include
 TARGET_PROVIDES_INIT_RC := true
 
 # Wifi stuff
@@ -84,6 +83,7 @@ TARGET_CUSTOM_WIFI := ../../hardware/realtek/wlan/libhardware_legacy/wifi/wifi_r
 endif
 
 # Beware: set only prebuilt OR source+config
-TARGET_PREBUILT_KERNEL := device/softwinner/907/kernel
+TARGET_PREBUILT_KERNEL := device/nvsbl/dragon/kernel
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 rw init=/init loglevel=8
+BOARD_KERNEL_PAGESIZE := 2048
