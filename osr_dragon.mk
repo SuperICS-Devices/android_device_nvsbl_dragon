@@ -15,7 +15,7 @@
 #
 
 $(call inherit-product, device/nvsbl/dragon/full_dragon.mk)
-$(call inherit-product, vendor/osr/products/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/osr/products/high_tablet_device.mk)
 $(call inherit-product, vendor/osr/products/base_telephony.mk)
 $(call inherit-product, device/nvsbl/dragon/dragon-blobs.mk)
 
