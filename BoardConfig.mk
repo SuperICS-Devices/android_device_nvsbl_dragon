@@ -79,11 +79,12 @@ WIFI_DRIVER_FW_PATH_AP    := ""
 WIFI_DRIVER_FW_PATH_P2P   := ""
 WIFI_DRIVER_FW_PATH_PARAM := ""
 
-TARGET_CUSTOM_WIFI := ../../hardware/realtek/wlan/libhardware_legacy/wifi/wifi_realtek.c
+TARGET_CUSTOM_WIFI := ../../hardware/realtek/wlan/wifi_realtek.c
 endif
 
 # Beware: set only prebuilt OR source+config
-TARGET_PREBUILT_KERNEL := device/nvsbl/dragon/kernel
+TARGET_KERNEL_SOURCE := kernel/allwinner/common
+TARGET_KERNEL_CONFIG := dragon_defconfig
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 rw init=/init loglevel=8
 BOARD_KERNEL_PAGESIZE := 2048
