@@ -12,11 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Update Me
-PRODUCT_COPY_FILES += \
-	device/nvsbl/dragon/prebuilt/app/UpdateMe.apk:system/app/UpdateMe.apk \
-	device/nvsbl/dragon/prebuilt/update_me.xml:system/update_me.xml
-
 # /system/bin
 PRODUCT_COPY_FILES += \
 	device/nvsbl/dragon/prebuilt/bin/fsck.exfat:system/bin/fsck.exfat \
@@ -71,3 +66,5 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,device/nvsbl/dragon/prebuilt/lib/modules,system/lib/modules)
+
+PRODUCT_BUILD_PROP_OVERRIDES := PRODUCT_NAME=GT-I9100 PRODUCT_BRAND=samsung BUILD_ID=IML74K BUILD_FINGERPRINT=samsung/GT-I9100/GT-I9100:4.0.3/IML74K/BGLP8:user/release-keys PRIVATE_BUILD_DESC="GT-I9100-user 4.0.3 IML74K BGLP8 release-keys" BUILD_NUMBER=BGLP8

@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 TARGET_BOARD_PLATFORM := exDroid
 TARGET_BOOTLOADER_BOARD_NAME := crane
 
@@ -45,6 +47,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_EGL_CFG := device/nvsbl/dragon/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_USE_SKIA_LCDTEXT := true
+ENABLE_WEBGL := true
 
 #Recovery Stuff
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvsbl/dragon/recovery_keys.c
@@ -53,10 +56,14 @@ BOARD_UMS_2ND_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun1/fi
 TARGET_RECOVERY_INITRC := device/nvsbl/dragon/recovery_init.rc
 
 #Misc stuff
+TARGET_USE_CUSTOM_LUN_FILE_PATH = "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
+TARGET_USE_CUSTOM_SECOND_LUN_NUM := 1
 TARGET_RECOVERY_PRE_COMMAND := "echo -n boot-recovery | busybox dd of=/dev/block/nandf count=1 conv=sync; sync"
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 TARGET_HARDWARE_INCLUDE := $(TOP)/device/nvsbl/dragon/libraries/include
 TARGET_PROVIDES_INIT_RC := true
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/softwinner/907/releasetools/907_ota_from_target_files
 
 # Wifi stuff
 BOARD_WIFI_VENDOR := realtek
@@ -79,7 +86,7 @@ WIFI_DRIVER_FW_PATH_AP    := ""
 WIFI_DRIVER_FW_PATH_P2P   := ""
 WIFI_DRIVER_FW_PATH_PARAM := ""
 
-TARGET_CUSTOM_WIFI := ../../hardware/realtek/wlan/wifi_realtek.c
+TARGET_CUSTOM_WIFI := ../../hardware/realtek/wlan/libhardware_legacy/wifi/wifi_realtek.c
 endif
 
 # Beware: set only prebuilt OR source+config

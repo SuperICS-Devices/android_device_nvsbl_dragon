@@ -27,7 +27,7 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.root_access=3 \
+	ro.wifi.country=EU \
 	ro.opengles.version = 131072 \
 	debug.egl.hw=1 \
 	ro.display.switch=1 \
@@ -61,11 +61,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.media.enc.hprof.vid.bps=800000 \
 	persist.sys.use_dithering=0 \
 	persist.sys.purgeable_assets=0 \
-	ro.HOME_APP_ADJ=1 \
 	view.touch_slop=2 \
 	view.minimum_fling_velocity=25 \
-	updateme.disableinstalledapps=1 \
-	updateme.disablescripts=1 \
+	usb.audio.out.device=pcmC2D0p \
+	usb.audio.cap.device=pcmC0D0c \
 	ro.additionalmounts = /mnt/extsd \
 	ro.vold.switchablepair=/mnt/sdcard,/mnt/extsd \
 	persist.sys.vold.switchexternal=0
@@ -96,7 +95,8 @@ PRODUCT_PACKAGES += \
 	LiveWallpapers \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
-	HoloSpiralWallpaper 
+	HoloSpiralWallpaper \
+	ROMControl
 
 PRODUCT_PACKAGES += \
 	VisualizationWallpapers \
@@ -120,17 +120,13 @@ PRODUCT_PACKAGES += \
 	Camera \
 	libjni_mosaic \
 	chat \
-	u3gmonitor
+	u3gmonitor \
+	devlistener
 
 # EXT4 Support
 PRODUCT_PACKAGES += \
 	make_ext4fs \
 	e2fsck
-
-$(call inherit-product, build/target/product/full_base.mk)
-
-# Should be after the full_base include, which loads languages_full
-PRODUCT_LOCALES += mdpi
 
 PRODUCT_NAME := full_dragon
 PRODUCT_DEVICE := dragon
