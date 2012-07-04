@@ -888,7 +888,7 @@ static int start_output_stream(struct sun4i_stream_out *out)
         /* HW Info (failsafe check) */
         struct pcm_config config;
         struct pcm *pcm;
-    	pcm = pcm_hwinfo(card, port, PCM_OUT, &config);
+	/*    	pcm = pcm_hwinfo(card, port, PCM_OUT, &config);
     	if (!pcm || !pcm_is_ready(pcm)) {
       		LOGE("### Unable to get Hardware information for device %s (%s)\n",
               property, pcm_get_error(pcm));
@@ -1378,7 +1378,7 @@ static int start_input_stream(struct sun4i_stream_in *in)
         /* HW Info (failsafe check) */
         struct pcm_config config;
         struct pcm *pcm;
-    	pcm = pcm_hwinfo(card, port, PCM_IN, &config);
+	/*    	pcm = pcm_hwinfo(card, port, PCM_IN, &config);
     	if (!pcm || !pcm_is_ready(pcm)) {
       		LOGE("### Unable to get Hardware information for device %s (%s)\n",
               property, pcm_get_error(pcm));
