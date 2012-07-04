@@ -127,5 +127,8 @@ PRODUCT_PACKAGES += \
 	make_ext4fs \
 	e2fsck
 
+PRODUCT_COPY_FILES += device/nvsbl/dragon/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+
 PRODUCT_NAME := full_dragon
 PRODUCT_DEVICE := dragon
+
