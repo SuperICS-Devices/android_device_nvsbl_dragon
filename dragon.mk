@@ -15,7 +15,6 @@
 #
 
 PRODUCT_COPY_FILES := \
-	device/nvsbl/dragon/kernel:kernel \
 	device/nvsbl/dragon/init.rc:root/init.rc \
 	device/nvsbl/dragon/initlogo.rle:root/initlogo.rle \
 	device/nvsbl/dragon/init.sun4i.rc:root/init.sun4i.rc \
