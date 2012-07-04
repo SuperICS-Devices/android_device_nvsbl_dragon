@@ -894,12 +894,12 @@ static int start_output_stream(struct sun4i_stream_out *out)
               property, pcm_get_error(pcm));
       	goto exit;
     	}
-        LOGV("# Supported Rates: (%uHz - %uHz)\n", config.rate_min, config.rate_max);
+	/*        LOGV("# Supported Rates: (%uHz - %uHz)\n", config.rate_min, config.rate_max);
         LOGV("# Supported Channels: (%uCh - %uCh)\n", config.channels_min, config.channels_max);
         /* Define preferred rate */                
     	property_get(OUT_CARD_FREQ_PROPERTY, property, "44100"); 	
     	out->config.rate = atoi(property);
-        if (!(out->config.rate >= config.rate_min &&
+	/*        if (!(out->config.rate >= config.rate_min &&
                   out->config.rate <= config.rate_max)) {
             LOGV("# Requested %dHz using supported value %dHz\n",out->config.rate, config.rate_max);
             out->config.rate = config.rate_max;
@@ -1384,12 +1384,12 @@ static int start_input_stream(struct sun4i_stream_in *in)
               property, pcm_get_error(pcm));
       	goto exit;
     	}
-        LOGV("# Supported Rates: (%uHz - %uHz)\n", config.rate_min, config.rate_max);
+	/*        LOGV("# Supported Rates: (%uHz - %uHz)\n", config.rate_min, config.rate_max);
         LOGV("# Supported Channels: (%uCh - %uCh)\n", config.channels_min, config.channels_max);
         /* Define preferred capture rate */
     	property_get(CAP_CARD_FREQ_PROPERTY, property, "44100"); 	
     	in->config.rate = atoi(property);
-        if (!(in->config.rate >= config.rate_min &&
+        /*if (!(in->config.rate >= config.rate_min &&
                   in->config.rate<= config.rate_max)) {
             LOGV("# Requested %dHz, using supported value %dHz\n",in->config.rate, config.rate_min);
             in->config.rate = config.rate_min;
