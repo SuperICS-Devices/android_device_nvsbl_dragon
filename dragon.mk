@@ -27,6 +27,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.wifi.country=EU \
+	persist.sys.root_access=3 \
 	ro.opengles.version = 131072 \
 	debug.egl.hw=1 \
 	ro.display.switch=1 \
@@ -60,6 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.media.enc.hprof.vid.bps=800000 \
 	persist.sys.use_dithering=0 \
 	persist.sys.purgeable_assets=0 \
+	ro.HOME_APP_ADJ=1 \
 	view.touch_slop=2 \
 	view.minimum_fling_velocity=25 \
 	usb.audio.out.device=pcmC2D0p \
@@ -94,8 +96,7 @@ PRODUCT_PACKAGES += \
 	LiveWallpapers \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
-	HoloSpiralWallpaper \
-	ROMControl
+	HoloSpiralWallpaper 
 
 PRODUCT_PACKAGES += \
 	VisualizationWallpapers \
@@ -103,12 +104,12 @@ PRODUCT_PACKAGES += \
 
 # Hardware libs
 PRODUCT_PACKAGES += \
-	gralloc.sun4i \
-	display.sun4i \
-	hwcomposer.exDroid \
-	lights.sun4i \
-	gps.sun4i \
-	audio.primary.exDroid \
+	gralloc.nvsbl \
+	display.nvsbl \
+	hwcomposer.nvsbl \
+	lights.nvsbl \
+	gps.nvsbl \
+	audio.primary.nvsbl \
 	audio.a2dp.default \
 	libaudioutils \
 	libcedarxbase \
@@ -119,16 +120,20 @@ PRODUCT_PACKAGES += \
 	Camera \
 	libjni_mosaic \
 	chat \
-	u3gmonitor \
-	devlistener
+	u3gmonitor
+
+#ROMControl
+PRODUCT_PACKAGES += \
+    ContactsWidgets \
+    ROMControl
 
 # EXT4 Support
 PRODUCT_PACKAGES += \
 	make_ext4fs \
 	e2fsck
 
-PRODUCT_COPY_FILES += device/nvsbl/dragon/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+$(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_NAME := full_dragon
-PRODUCT_DEVICE := dragon
+# Should be after the full_base include, which loads languages_full
+PRODUCT_LOCALES += mdpi
 

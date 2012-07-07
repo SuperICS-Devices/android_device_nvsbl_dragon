@@ -13,15 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-TARGET_BOARD_PLATFORM := exDroid
-TARGET_BOOTLOADER_BOARD_NAME := crane
+TARGET_BOARD_PLATFORM := nvsbl
+TARGET_BOOTLOADER_BOARD_NAME := dragon
 
 USE_CAMERA_STUB := false
 HAVE_HTC_AUDIO_DRIVER := true
 BOARD_USES_GENERIC_AUDIO := true
 BOARD_USES_GPS_TYPE := simulator
+SW_BOARD_USES_GSENSOR_TYPE := bma250
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -35,6 +34,7 @@ TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 BOARD_HAVE_BLUETOOTH := true
+BOARD_HAS_SDCARD_INTERNAL := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
@@ -48,6 +48,8 @@ BOARD_EGL_CFG := device/nvsbl/dragon/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_USE_SKIA_LCDTEXT := true
 ENABLE_WEBGL := true
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 #Recovery Stuff
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvsbl/dragon/recovery_keys.c
@@ -62,7 +64,6 @@ TARGET_RECOVERY_PRE_COMMAND := "echo -n boot-recovery | busybox dd of=/dev/block
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 TARGET_HARDWARE_INCLUDE := $(TOP)/device/nvsbl/dragon/libraries/include
 TARGET_PROVIDES_INIT_RC := true
-TARGET_BOOTANIMATION_PRELOAD := true
 
 BOARD_WIFI_VENDOR                := realtek
 WPA_SUPPLICANT_VERSION           := VER_0_8_X

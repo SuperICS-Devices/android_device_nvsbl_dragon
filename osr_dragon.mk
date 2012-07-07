@@ -17,7 +17,10 @@
 $(call inherit-product, device/nvsbl/dragon/full_dragon.mk)
 $(call inherit-product, vendor/osr/products/high_tablet_device.mk)
 $(call inherit-product, vendor/osr/products/base_telephony.mk)
-$(call inherit-product, device/nvsbl/dragon/dragon-blobs.mk)
+$(call inherit-product, device/gemei/g9/g9-blobs.mk)
+$(call inherit-product, vendor/osr/products/asian.mk)
+$(call inherit-product, vendor/osr/products/mdpi.mk)
+$(call inherit-product, vendor/osr/products/facelock.mk)
 
 -include vendor/osr/products/minimal_gapps.mk
 -include vendor/osr/products/flashplayer.mk
@@ -32,11 +35,13 @@ PRODUCT_MANUFACTURER := NVSBL
 PRODUCT_RELEASE_NAME := dragon
 PRODUCT_VERSION_MAINTENANCE := 0
 
-PRODUCT_LOCALES := es_ES en_US fr_FR it_IT de_DE nl_NL cs_CZ pl_PL ja_JP zh_TW zh_CN ru_RU ko_KR nb_NO es_US da_DK el_GR tr_TR pt_PT pt_BR rm_CH sv_SE bg_BG ca_ES en_GB fi_FI hi_IN hr_HR hu_HU in_ID iw_IL lt_LT lv_LV ro_RO sk_SK sl_SI sr_RS uk_UA vi_VN tl_PH ar_EG fa_IR th_TH sw_TZ ms_MY af_ZA zu_ZA am_ET hi_IN mdpi
+PRODUCT_LOCALES := es_ES ca_ES zh_CN ja_JP ko_KR ru_RU en_US en_GB fr_FR it_IT de_DE hdpi
 
 VENDOR_COPY_USER_DATA := true
 VENDOR_WIPE_USER_DATA := false
 
 DEVICE_PACKAGE_OVERLAYS += vendor/osr/overlay/mdpi
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=Dragon BUILD_FINGERPRINT="iNet/crane_evb/crane-evb:4.0.3/IML74K/20120330:eng/test-keys" PRIVATE_BUILD_DESC="crane_evb-eng 4.0.3 IML74K 20120330 test-keys"
+PRODUCT_CHARACTERISTICS := tablet
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=Sun4i BUILD_FINGERPRINT="iNet/crane_evb/crane-evb:4.0.4/IMM76I/20120330:eng/test-keys" PRIVATE_BUILD_DESC="crane_evb-eng 4.0.4 IMM76I 20120330 test-keys"
