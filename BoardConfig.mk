@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-TARGET_BOARD_PLATFORM := exDroid
-TARGET_BOOTLOADER_BOARD_NAME := crane
+TARGET_BOARD_PLATFORM := nvsbl
+TARGET_BOOTLOADER_BOARD_NAME := dragon
 
 USE_CAMERA_STUB := false
 HAVE_HTC_AUDIO_DRIVER := true

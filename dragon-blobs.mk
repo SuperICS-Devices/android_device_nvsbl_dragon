@@ -53,12 +53,12 @@ PRODUCT_COPY_FILES += \
 	device/nvsbl/dragon/prebuilt/lib/egl/libEGL_mali.so:system/lib/egl/libEGL_mali.so \
 	device/nvsbl/dragon/prebuilt/lib/egl/libGLESv1_CM_mali.so:system/lib/egl/libGLESv1_CM_mali.so \
 	device/nvsbl/dragon/prebuilt/lib/egl/libGLESv2_mali.so:system/lib/egl/libGLESv2_mali.so \
-	device/nvsbl/dragon/prebuilt/lib/hw/camera.exDroid.so:system/lib/hw/camera.exDroid.so \
-	device/nvsbl/dragon/prebuilt/lib/hw/sensors.exDroid.so:system/lib/hw/sensors.exDroid.so \
+	device/nvsbl/dragon/prebuilt/lib/hw/camera.nvsbl.so:system/lib/hw/camera.nvsbl.so \
+	device/nvsbl/dragon/prebuilt/lib/hw/sensors.nvsbl.so:system/lib/hw/sensors.nvsbl.so \
 	device/nvsbl/dragon/prebuilt/lib/liballwinner-ril.so:system/lib/liballwinner-ril.so \
 	device/nvsbl/dragon/prebuilt/lib/libMali.so:system/lib/libMali.so \
 	device/nvsbl/dragon/prebuilt/lib/libUMP.so:system/lib/libUMP.so \
-	external/cedarx/CedarAndroidLib/LIB_ICS_F23/libstagefright_soft_cedar_h264dec.so:system/lib/libstagefright_soft_cedar_h264dec.so \
+	device/nvsbl/dragon/prebuilt/lib/libstagefright_soft_cedar_h264dec.so:system/lib/libstagefright_soft_cedar_h264dec.so \
 	device/nvsbl/dragon/prebuilt/lib/libMali.so:obj/lib/libMali.so \
 	device/nvsbl/dragon/prebuilt/lib/libUMP.so:obj/lib/libUMP.so
 

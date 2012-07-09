@@ -31,10 +31,10 @@ endif
 
 ifeq ($(BOARD_USES_GPS_TYPE),haiweixun)
 include $(CLEAR_VARS)
-LOCAL_MODULE := gps.sun4i.so
+LOCAL_MODULE := gps.$(TARGET_BOARD_PLATFORM).so
 LOCAL_MODULE_TAGS := eng
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/hw/
-LOCAL_SRC_FILES := /haiweixun/gps.sun4i.so
+LOCAL_SRC_FILES := /haiweixun/gps.$(TARGET_BOARD_PLATFORM).so
 include $(BUILD_PREBUILT)
 endif
