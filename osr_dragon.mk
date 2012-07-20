@@ -40,7 +40,7 @@ PRODUCT_LOCALES := es_ES ca_ES zh_CN ja_JP ko_KR ru_RU en_US en_GB fr_FR it_IT d
 VENDOR_COPY_USER_DATA := true
 VENDOR_WIPE_USER_DATA := false
 
-DEVICE_PACKAGE_OVERLAYS += vendor/osr/overlay/hdpi
+#DEVICE_PACKAGE_OVERLAYS += vendor/osr/overlay/hdpi
 
 PRODUCT_CHARACTERISTICS := tablet
 

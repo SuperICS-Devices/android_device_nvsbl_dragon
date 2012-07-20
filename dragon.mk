@@ -70,7 +70,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vold.switchablepair=/mnt/sdcard,/mnt/extsd \
 	persist.sys.vold.switchexternal=0
 
-DEVICE_PACKAGE_OVERLAYS := device/nvsbl/dragon/overlay
+DEVICE_PACKAGE_OVERLAYS += device/nvsbl/dragon/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -135,5 +135,5 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, build/target/product/full_base.mk)
 
 # Should be after the full_base include, which loads languages_full
-PRODUCT_LOCALES += mdpi
+PRODUCT_LOCALES += hdpi
 
