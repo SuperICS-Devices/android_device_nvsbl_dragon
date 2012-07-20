@@ -19,7 +19,7 @@ $(call inherit-product, vendor/osr/products/high_tablet_device.mk)
 $(call inherit-product, vendor/osr/products/base_telephony.mk)
 $(call inherit-product, device/nvsbl/dragon/dragon-blobs.mk)
 $(call inherit-product, vendor/osr/products/asian.mk)
-$(call inherit-product, vendor/osr/products/mdpi.mk)
+#$(call inherit-product, vendor/osr/products/hdpi.mk)
 $(call inherit-product, vendor/osr/products/facelock.mk)
 
 -include vendor/osr/products/minimal_gapps.mk
@@ -35,12 +35,12 @@ PRODUCT_MANUFACTURER := NVSBL
 PRODUCT_RELEASE_NAME := dragon
 PRODUCT_VERSION_MAINTENANCE := 0
 
-PRODUCT_LOCALES := es_ES ca_ES zh_CN ja_JP ko_KR ru_RU en_US en_GB fr_FR it_IT de_DE mdpi
+PRODUCT_LOCALES := es_ES ca_ES zh_CN ja_JP ko_KR ru_RU en_US en_GB fr_FR it_IT de_DE hdpi
 
 VENDOR_COPY_USER_DATA := true
 VENDOR_WIPE_USER_DATA := false
 
-DEVICE_PACKAGE_OVERLAYS += vendor/osr/overlay/mdpi
+DEVICE_PACKAGE_OVERLAYS += vendor/osr/overlay/hdpi
 
 PRODUCT_CHARACTERISTICS := tablet
 

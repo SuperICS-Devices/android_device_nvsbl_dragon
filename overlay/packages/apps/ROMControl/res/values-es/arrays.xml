@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="available_toggles_entries" translatable="false">
+		<item>ROTATE</item>
+		<item>BT</item>
+		<item>WIFI</item>
+		<item>SILENT</item>
+		<item>SYNC</item>
+	</string-array>
+
+	<string-array name="available_toggles_values">
+		<item>Rotación</item>
+		<item>BT</item>
+		<item>Wi-Fi</item>
+		<item>Silencio</item>
+		<item>Sincronización</item>
+	</string-array>
+</resources>
